@@ -1,0 +1,75 @@
+{% include 'head.html' %}
+
+   <body>
+    {% include 'menu.html' %}
+
+    <div class="container">
+		<h2>Diff</h2>
+		<header class="jumbotron subhead" id="overview">
+			<p class="lead">Diff on <b>{{ hosts.0 }}</b> and <b>{{ hosts.1 }}</b> hosts </p>
+			<div class="subnav">
+				<ul class="nav nav-pills">
+					<li><a href="diff?host1={{ hosts.0 }}&host2={{ hosts.1 }}&section=all">All</a></li>
+					<li><a href="diff?host1={{ hosts.0 }}&host2={{ hosts.1 }}&section=std">All-packages</a></li>
+					<li><a href="diff?host1={{ hosts.0 }}&host2={{ hosts.1 }}&section=hw">Hardware</a></li>
+					<li><a href="diff?host1={{ hosts.0 }}&host2={{ hosts.1 }}&section=sys">System</a></li>
+					<li><a href="diff?host1={{ hosts.0 }}&host2={{ hosts.1 }}&section=dpkg">Packages</a></li>
+				</ul>
+			</div>
+		</header>
+
+		<form name="bestformever" class="well form-inline" method="GET" id="difffrm" action="diff">
+			<fieldset>
+			<div class="control-group">
+				<select id="host1_select" name="host1">
+					{% for host in allhosts %}
+						<option {% if hosts.0 == host %}selected{% endif %} value="{{ host }}">{{ host }}</option>
+					{% endfor %}
+				</select>
+				<select id="host2_select" name="host2">
+					{% for host in allhosts %}
+					<option {% if hosts.1 == host %}selected{% endif %} value="{{ host }}">{{ host }}</option>
+					{% endfor %}
+				</select>
+            	<label class="control-label" for="section">Select list</label>
+              		<select id="section" name="section">
+                		<option value="all">All</option>
+                		<option value="std">All-packages</option>
+                		<option value="hw">Hardware</option>
+                		<option value="sys">System</option>
+                		<option value="dpkg">Packages</option>
+              		</select>
+				<label class="checkbox">
+				   	 <input type="checkbox" name="cli"> Cli 
+				</label>
+				<button type="submit" class="btn" formmethod="GET">Diff</button>
+          	</div>
+			</fieldset>
+		</form>
+		<style type="text/css">
+			.diff_chg {
+				font-weight: bold;
+				color: red;
+			}
+			.diff_sub {
+				font-weight: bold;
+				color: red;
+			}
+			tbody td {
+				padding-left: 3px;
+				padding-right: 3px;
+			}
+			.diff_str {
+				background-color: #dbd9d9;
+				font-weight: bold;
+			}
+		</style>
+
+
+		{% autoescape false %}
+			{{ data }}
+		{% endautoescape %}
+    </div> <!-- /container -->
+    {% include 'footer.html' %}
+</body>
+</html>

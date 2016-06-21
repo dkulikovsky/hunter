@@ -1,0 +1,9 @@
+dh_installinit
+dh_install
+dh_installdeb
+dh_clearvcs
+dh_gencontrol
+dh_md5sums
+dh_installcron
+dh_builddeb
+dh_builddeb

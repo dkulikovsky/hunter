@@ -1,0 +1,9 @@
+Package: hunter
+Version: 0.1.23
+Architecture: all
+Maintainer: Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>
+Installed-Size: 1194
+Depends: python-flask, mysql-server, multiwatch, python-mysqldb, python-flup
+Section: misc
+Priority: extra
+Description: partners top aggregator

@@ -1,0 +1,159 @@
+hunter (0.1.23) unstable; urgency=low
+
+  * made it compatible with innodb 
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Tue, 16 Dec 2014 18:47:45 +0300
+
+hunter (0.1.22) unstable; urgency=low
+
+  * moved to upstart 
+  * moved port 9002 to 9102 
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Tue, 16 Dec 2014 18:19:38 +0300
+
+hunter (0.1.21) unstable; urgency=low
+
+  * fixed log issues 
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Tue, 16 Dec 2014 18:05:59 +0300
+
+hunter (0.1.20) unstable; urgency=low
+
+  * added logging to file
+  * added chown for logfile 
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Tue, 16 Dec 2014 17:42:43 +0300
+
+hunter (0.1.19) unstable; urgency=low
+
+  * Enable ipv6 too
+
+ -- Semen Slepov <slepovss@yandex-team.ru>  Tue, 21 Oct 2014 19:00:10 +0400
+
+hunter (0.1.18) unstable; urgency=low
+
+  * Enabled ipv6 for hunter-upload
+
+ -- Semen Slepov <slepovss@yandex-team.ru>  Tue, 21 Oct 2014 18:17:00 +0400
+
+hunter (0.1.17) unstable; urgency=low
+
+  * fixed empty hostname bug 
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Thu, 10 Apr 2014 21:48:38 +0400
+
+hunter (0.1.16) unstable; urgency=low
+
+  * BSADM-660 
+
+ -- Anna Sysoeva <antrue@yandex-team.ru>  Mon, 16 Sep 2013 18:46:28 +0400
+
+hunter (0.1.15) unstable; urgency=low
+
+  * Changed nginx config filename
+
+ -- Anna Sysoeva <antrue@yandex-team.ru>  Thu, 21 Mar 2013 17:22:48 +0400
+
+hunter (0.1.14+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Changed nginx config filename 
+
+ -- Anna Sysoeva <antrue@yandex-team.ru>  Thu, 21 Mar 2013 17:11:01 +0400
+
+hunter (0.1.14) unstable; urgency=low
+
+  * added timestamp in table 
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Wed, 12 Dec 2012 15:53:54 +0400
+
+hunter (0.1.13) unstable; urgency=low
+
+  * Changed init script with executing fcgi-script with multiwatch
+
+ -- Semen Slepov <slepovss@yandex-team.ru>  Fri, 31 Aug 2012 18:39:03 +0400
+
+hunter (0.1.12) unstable; urgency=low
+
+  * added common style to all pages 
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Fri, 24 Aug 2012 18:05:18 +0000
+
+hunter (0.1.11) unstable; urgency=low
+
+  * fixed path 
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Fri, 24 Aug 2012 17:43:37 +0000
+
+hunter (0.1.10) unstable; urgency=low
+
+  * added multi host diff 
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Fri, 24 Aug 2012 17:37:41 +0000
+
+hunter (0.1.9) unstable; urgency=low
+
+  * upgraded to bootstrap 2.1.0 
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Tue, 21 Aug 2012 15:32:49 +0000
+
+hunter (0.1.8) unstable; urgency=low
+
+  * fixed favicon 
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Tue, 21 Aug 2012 13:40:59 +0000
+
+hunter (0.1.7.1) unstable; urgency=low
+
+  * Fixed listen directive in nginx-config
+
+ -- Semen Slepov <slepovss@yandex-team.ru>  Mon, 20 Aug 2012 21:00:39 +0400
+
+hunter (0.1.7) unstable; urgency=low
+
+  * Moved hunter frontend  for upload to external port - 9003
+
+ -- Semen Slepov <slepovss@yandex-team.ru>  Mon, 20 Aug 2012 20:53:51 +0400
+
+hunter (0.1.6.1) unstable; urgency=low
+
+  * Fix package content, added missed init-script
+
+ -- Semen Slepov <slepovss@yandex-team.ru>  Thu, 16 Aug 2012 16:02:42 +0400
+
+hunter (0.1.6) unstable; urgency=low
+
+  * Changed HTTP frontend to NGINX
+
+ -- Semen Slepov <slepovss@yandex-team.ru>  Thu, 16 Aug 2012 15:16:24 +0400
+
+hunter (0.1.5) unstable; urgency=low
+
+  * added cli to all handlers 
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Sat, 11 Aug 2012 06:55:07 +0000
+
+hunter (0.1.4) unstable; urgency=low
+
+  * added new highlighter diff_sub 
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Thu, 09 Aug 2012 12:06:37 +0000
+
+hunter (0.1.3) unstable; urgency=low
+
+  * fixed lighttpd conf 
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Thu, 09 Aug 2012 11:15:13 +0000
+
+hunter (0.1.2) unstable; urgency=low
+
+  * fixed few bugs 
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Wed, 08 Aug 2012 15:43:50 +0000
+
+hunter (0.1.1) unstable; urgency=low
+
+  * initial release for hunter web interface
+
+ -- Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>  Mon, 23 Apr 2012 16:42:29 +0400
+

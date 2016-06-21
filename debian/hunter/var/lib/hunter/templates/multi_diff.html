@@ -1,0 +1,74 @@
+{% include 'head.html' %}
+
+   <body>
+
+    {% include 'menu.html' %}
+    <div class="container">
+      <h2>Multihost diff</h2>
+	<table class="table">
+		{% if diff %}
+			<header class="jumbotron subhead" id="overview">
+				<p class="lead">Diff on {% for h in hosts %}<b>{{ h }}</b> {% endfor %}</p>
+				<div class="subnav">
+					<ul class="nav nav-pills">
+						<li><a href="multi_diff?hosts={% for h in hosts %}{{ h }},{% endfor %}&section=all">All</a></li>
+						<li><a href="multi_diff?hosts={% for h in hosts %}{{ h }},{% endfor %}&section=std">All-packages</a></li>
+						<li><a href="multi_diff?hosts={% for h in hosts %}{{ h }},{% endfor %}&section=hw">Hardware</a></li>
+						<li><a href="multi_diff?hosts={% for h in hosts %}{{ h }},{% endfor %}&section=sys">System</a></li>
+						<li><a href="multi_diff?hosts={% for h in hosts %}{{ h }},{% endfor %}&section=dpkg">Packages</a></li>
+					</ul>
+				</div>
+			</header>
+			<tr>
+				<td><b>Key name</b></td>
+				{% for host in hosts %}
+					<td><b>{{ host }}</b></td>
+				{% endfor %}
+			</tr>
+			{% autoescape false %}
+			{% for line in diff %}
+				<tr>
+				{% for item in line %}
+					{{ item }}
+				{% endfor %}
+				</tr>
+			{% endfor %}
+			{% endautoescape %}
+		{% else %}
+		<form class="well form-inline" method="GET" action="multi_diff">
+		<div class="controls controls-row" align="right">
+				Select filter:&nbsp;&nbsp;
+              	<select id="section" name="section">
+               		<option value="all">All</option>
+               		<option value="std">All-packages</option>
+               		<option value="hw">Hardware</option>
+               		<option value="sys">System</option>
+               		<option value="dpkg">Packages</option>
+            	</select>&nbsp;
+				<button type="submit" class="btn btn-danger btn-small inline" formmethod="GET">Diff</button>
+		</div>
+			{% for host in data %} 
+				<tr>
+					<td>{{ loop.index }}</td>
+					<td><input type="checkbox" name="host_{{ loop.index }}" value="{{ host }}"></td> 
+					<td><a href="host?hostname={{ host }}">{{ host }}</a></td>
+				</tr>
+			{% endfor %}
+		</form>
+		{% endif %}
+	</table>
+    </div>
+    {% include 'footer.html' %}
+		<style type="text/css">
+			td.diff_abs {
+				background-color: #f99eb0;
+			}
+			td.diff_diff {
+				background-color: #9ebcf9;
+				font-weight: bold;
+			}
+		</style>
+
+
+</body>
+</html>

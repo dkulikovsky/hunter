@@ -1,0 +1,33 @@
+{% include 'head.html' %}
+
+   <body>
+    {% include 'menu.html' %}
+
+    <div class="container">
+
+	<h2>Host info for host: <a href="host?hostname={{ host }}">{{ host }}</a></h2>
+
+		<header class="jumbotron subhead" id="overview">
+			<div class="subnav">
+				<ul class="nav nav-pills">
+					<li><a href="host?hostname={{ host }}&section=std">All-packages</a></li>
+					<li><a href="host?hostname={{ host }}&section=all">All</a></li>
+					<li><a href="host?hostname={{ host }}&section=hw">Hardware</a></li>
+					<li><a href="host?hostname={{ host }}&section=sys">System</a></li>
+					<li><a href="host?hostname={{ host }}&section=dpkg">Packages</a></li>
+				</ul>
+			</div>
+		</header>
+
+
+	<table class="table">
+		<tr><td><b>key</b></td><td><b>val</b></td></tr>
+		{% for key,val in data %} 
+			<tr><td>{{ key }}</td><td>{{ val }}</td></tr>
+		{% endfor %}
+	</table>
+
+    </div> <!-- /container -->
+    {% include 'footer.html' %}
+</body>
+</html>

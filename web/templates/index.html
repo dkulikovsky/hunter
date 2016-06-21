@@ -1,0 +1,15 @@
+{% include 'head.html' %}
+
+   <body>
+    {% include 'menu.html' %}
+    <div class="container">
+      <h2>Host list</h2>
+	<table class="table table-striped">
+		{% for host in data %} 
+			 <tr><td>{{ loop.index }}</td><td><a href="host?hostname={{ host }}">{{ host }}</a></td></tr>
+		{% endfor %}
+	</table>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,5 @@
+settings.py var/lib/hunter/
+web/* var/lib/hunter/
+etc/30hunter.conf etc/nginx/sites-enabled/
+etc/hunter-upload.conf etc/nginx/sites-enabled/
+hunter.sql var/lib/hunter/

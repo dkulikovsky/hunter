@@ -1,0 +1,11 @@
+Source: hunter
+Section: misc
+Priority: extra
+Maintainer: Kulikovsky Dmitry <dkulikovsky@yandex-team.ru>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: hunter
+Architecture: all
+Depends: python-flask, mysql-server, multiwatch, python-mysqldb, python-flup
+Description: partners top aggregator 

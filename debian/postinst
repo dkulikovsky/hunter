@@ -1,0 +1,32 @@
+#!/bin/bash
+# postinst script for testpkg
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <postinst> `abort-remove'
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see http://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+case "$1" in
+    configure)
+	mysql -e "create database advmon;" || :
+	mysql advmon < /var/lib/hunter/hunter.sql || :
+        chown -R www-data:www-data /var/lib/hunter/static/ || :
+	echo -e "\033[0;33m Hunter installed succefully \033[0m"
+	echo -e "\033[0;33m now you have to set db user and password in /var/lib/hunter/settings.py \033[0m"
+	echo -e "\033[0;33m and grant privileges on advmon database \033[0m"
+    ;;
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
